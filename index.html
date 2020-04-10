@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base target="_self">
+<title>Responsywność w html</title>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+</head>
+<body>
+<div id="all">
+<div id="header">
+<h1><i>Kurs html</i></h1>
+<h5>Made by Łukasz</h5>
+</div>
+<h2 class="center">Tajniki responsywności w html</h2> 
+<div id="nav">
+<a href="#a1">Czym jest responsywnosć?</a>
+<br>
+<a href="#a2">Dostosowywanie szerokości...</a>
+<br>
+<a href="#a3">@media-co to jest?</a>
+<br>
+<a href="#a4">@media-zmienianie szerokości...</a>
+</div>
+<div id="article">
+<h3 class="center"><a id="a1">Czym jest responsywność?</a></h3>
+Responsywność w html polega na dostosowywaniu się do rozmiaru okna przeglądarki, na którym wyświetlana jest ta strona. Dzięki temu strona adaptuje się do zaistniałych warunków, co wpływa na konfort przy przeglądaniu stron.
+<h3 class="center"><a id="a2">Dostosowanie szerokości strony do okna wyświetlania</a></h3>
+Podstawową komendą jaką trzeba napisać przy tworzeniu responsywnej strony, jest:
+<br>
+<p class="center">"meta name="viewport" content="width=device-width, initial-scale=1",</p>
+<br>
+którą należy napisać w headerze.
+<br>
+Co oznaczają poszczególne fragmenty kodu? Otóż meta-stag "vievport" odpowiada za domyśle ustawienia wymiarów i skalowania strony. "device-width" sprawia, że szerokoć strony definiuje szerokosć okna przegladarki. "initrial-scale"1" ustawia zaś domyślne skalowanie strony na x1.
+<br>
+Inną, również ważną zasadą jest to, aby rozmiar poszczególnych divów, tabel itp. zapisywać za pomocą procentów, zaś zapisywanie za pomocą pikselów powinno byc stosowane tylko w ostateczności.
+<h3 class="center"><a id="a3">@media- co to jest?</a></h3>
+Kolejnym ważną komendą używaną w responsywnych stronach jest "@media", którą umieszcza się w sekcji "style" lub zewnętrznym pliku CSS. Określa ona, jak ma wyglądać strona po spełnieniu określonych warunków, np. wielkości (coś jak if w m.in C++)
+<h3 class="center"><a id="a4">@media- zmienianie wielkosci divów</a></h3>
+Ta strona ma obecnie następujacy layout:
+<br><br>
+<img src="width-before.png" alt="strona przed komendą @media">
+<br><br>
+Div all zajmuje 90% okna przeglądarki
+<br>
+Chcemy, żeby przy mniejszych wiekosciach (dajmy, że po 800px) layout wyglądał tak:
+<br><br>
+<img src="width-after.png" alt="strona po komendzie @media">
+<br><br>
+Aby to zrobić, trzeba wpisać następującą komendę w sekcji style lub zewnętrznym pliku CSS:
+<p class="center">"@media screen and (max-width: 800px) {
+<br>
+#all{width:100%}}
+</p>
+Pierwszy fragment definiuje warunek, który musi się spełnić: szerokosć ekranu musi wynosić maksymalnie 800px. Druga zaś określa właściwości obiektów po spełnieniu warunku - w tym wypadku zwiększenie wielkości diva "all" z 90 do 100%. Sprawdź teraz na stronie, czy to działa.
+</div>
+<div id="footer">
+Kurs html Made by Łukasz &copy;; Wszelkie prawa zastrzeżone.
+<br>
+<b>Strona stworzona przez:<i>Łukasz Jagiełło</i></b>
+</div>
+</div>
+</body>
+</html> 
